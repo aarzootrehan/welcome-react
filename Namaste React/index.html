@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css"/>
+    <title>Namaste React</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script> <!--React library code - Core file-->
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> React library used for DOM operations
+    
+    <script>
+        // Create h1 tag using Javascript
+        let rootElem = document.getElementById("root");
+        let h1 = document.createElement("h1");
+        h1.textContent = "Hello world from javascript";
+        rootElem.appendChild(h1);
+
+    </script>
+
+    <script src="./App.js"></script>
+</body>
+</html>
