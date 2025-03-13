@@ -1,3 +1,5 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 // Create h1 tag using React
 // createElement will return an object of h1 with attributes defined in
 // 2nd parameter and children defined in 3rd parameter
@@ -18,10 +20,10 @@ const heading = React.createElement("div", {
     id: "parent",
 },
     React.createElement("div", { id: "child" },
-        [React.createElement("h1", { id: "heading" }, "Hi I am h1 tag"),
+        [React.createElement("h1", { id: "heading" }, "Hi I am Namaste react tag"),
         React.createElement("h1", { id: "heading2" }, "Hi I am inside another h1 tag")
         ]
     ));
 const root = ReactDOM.createRoot(rootElem);
-rootElem.appendChild(heading);
-// root.render(heading);
+// rootElem.appendChild(heading);
+root.render(heading);
