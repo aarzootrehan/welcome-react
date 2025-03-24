@@ -4,14 +4,17 @@
   "description": "This application is made by Aarzoo to practice React",
   "scripts": {
     "test": "jest",
-    "start": "parcel index.html",
+    "start": "npx parcel index.html",
     "build": "parcel build index.html"
   },
   "author": "Aarzoo Trehan",
   "license": "ISC",
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.14",
     "parcel": "^2.13.3",
-    "process": "^0.11.10"
+    "postcss": "^8.5.3",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.4.17"
   },
   "dependencies": {
     "react": "^19.0.0",
