@@ -29,7 +29,7 @@ export const CategoryAccordian = ({ title, card, showIndex, setShowIndex}) => {
         {/*  In order to open collapse accordian individually, uncomment below */}
         {/* {visible && <ItemList card={card}/>} */}
 
-        {showIndex && <ItemList card={card} key={card.id}/>}
+        {showIndex && <ItemList card={card.itemCards} key={card.id}/>}
       </div>
     </div>
   );

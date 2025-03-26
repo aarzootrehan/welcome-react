@@ -2,10 +2,17 @@ import { useContext, useState } from "react"
 import { LOGO_URL } from "../utils/constants"
 import { Link } from 'react-router';
 import { UserContext } from "../context/UserContext";
+import { useSelector } from "react-redux";
 
 export const Header = () => {
     const [btnName, setBtnName] = useState("Login");
     const {loggedInUser} = useContext(UserContext);
+
+    // Subscribing the store with the use of selector using useSelector hook
+    const cartItems = useSelector((store) => {
+        console.log("Store has ", store);
+        return store.cart.items;
+    });
 
     return (
         <div className="flex justify-between border shadow-lg mb-4">
@@ -27,7 +34,7 @@ export const Header = () => {
                         <Link to="/contact">Contact Us</Link>
                     </li>
                     <li className="p-4">
-                        <Link to="/cart">Cart</Link>
+                        <Link to="/cart">Cart ({cartItems.length} items)</Link>
                     </li>
                     <button className="p-4 cursor-pointer border-gray-300" onClick={() => {
                         btnName === "Login" ?

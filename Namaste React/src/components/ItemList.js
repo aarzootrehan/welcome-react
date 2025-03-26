@@ -1,8 +1,22 @@
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/slices/cartSlice";
+
 export const ItemList = ({ card }) => {
+
+  const dispatch = useDispatch();
+
+  /**
+   * Method to dispatch actions
+   */
+  const addItemsToCart = (item) => {
+    console.log("item ", item);
+    dispatch(addItem(item))
+  }
+  
   return (
     <div>
-      {card.itemCards.map((item) => (
-        <div className="flex justify-between">
+      {card.map((item) => (
+        <div className="flex justify-between border border-solid border-gray-300 m-2 p-2" key={item.id}>
           <div className="flex flex-col p-4 border-b-gray-300 h-[200px] w-[100%]">
             <div className="font-medium text-left">{item.card.info.name}</div>
             <div className="font-medium px-3 text-left">
@@ -18,7 +32,7 @@ export const ItemList = ({ card }) => {
             </div>
           </div>
 
-          <div className="image-container">
+          <div className="">
             <img
               alt="Item Image"
               className="item-img"
@@ -26,7 +40,8 @@ export const ItemList = ({ card }) => {
                 "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/" +
                 item.card.info.imageId
               }
-            />
+            />  
+            {item.card.info.inStock && <button className="border-b-4 bg-green-300 m-2 p-2 rounded-md" onClick={() => addItemsToCart(item)}>Add +</button>}
           </div>
         </div>
       ))}
